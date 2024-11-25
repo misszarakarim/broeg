@@ -1,0 +1,10 @@
+---
+const {data} = Astro.props;
+---
+
+<a href={`products/${data.slug}`}>
+<article>
+    <h2>{data.name}</h2>
+    <p>{data.price}</p>
+    <p>test</p>
+</article></a>
