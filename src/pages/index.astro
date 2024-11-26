@@ -1,14 +1,6 @@
 ---
 
-const data = await fetch(
-    "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products", 
-    {
-    method:"GET",
-    headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlubm5qeHlhcXlqY2V1Y2l6cHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MzM3NDQsImV4cCI6MjA0ODEwOTc0NH0.j0GJ0nKDs09Qd39B_PxaBwDX69ZrOxYTNXPoTfzAWbI"
-    },
-}
-).then((res) => res.json());
+
 
 
 
@@ -22,10 +14,6 @@ import Products from "../components/Products.astro";
 		<p>Index indhold</p>
 	<section class="products">
 
-		{
-		data.map(product=>{
-			return <Products data={product} />;
-		})}
 		
 	</section>	</article>
 

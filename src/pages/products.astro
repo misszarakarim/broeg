@@ -1,4 +1,79 @@
 ---
+import Product from "../components/Products.astro";
+
+
+
+const data = await fetch(
+    "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products", 
+    {
+    method:"GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlubm5qeHlhcXlqY2V1Y2l6cHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MzM3NDQsImV4cCI6MjA0ODEwOTc0NH0.j0GJ0nKDs09Qd39B_PxaBwDX69ZrOxYTNXPoTfzAWbI"
+    },
+}
+).then((res) => res.json());
+
+
+
+
+
 
 
 ---
+
+  <!-- Category Buttons -->
+  <div>
+    <button class="bg-pink-500" onclick="filterProducts('krus')">Krus</button>
+    <button class="bg-blue-600" onclick="filterProducts('tote')">Tote</button>
+    <button onclick="filterProducts('')">Show All</button> <!-- Show all products -->
+  </div>
+
+
+
+  
+
+  <script>
+    // JavaScript to toggle categories
+    function filterProducts(kategori) {
+      const products = document.querySelectorAll('.product');
+      products.forEach((product) => {
+        if (kategori === '' || product.dataset.kategori === kategori) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+
+
+
+  <!-- Product List -->
+  <ul id="product-list">
+    {data.map((myData) => (
+      <li
+        class="product"
+        data-kategori={myData.kategori}  
+        key={myData.slug}
+      >
+        <!-- Use the Product component and pass the product data -->
+        <Product product={myData} />
+      </li>
+    ))}
+  </ul>
+
+
+  <script client:load>
+    // JavaScript to toggle categories
+    function filterProducts(kategori) {
+      const products = document.querySelectorAll('.product');
+      products.forEach((product) => {
+        if (kategori === '' || product.dataset.kategori === kategori) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+    }
+  </script>
