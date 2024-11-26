@@ -20,60 +20,41 @@ const data = await fetch(
 
 
 ---
-
-  <!-- Category Buttons -->
-  <div>
-    <button class="bg-pink-500" onclick="filterProducts('krus')">Krus</button>
-    <button class="bg-blue-600" onclick="filterProducts('tote')">Tote</button>
-    <button onclick="filterProducts('')">Show All</button> <!-- Show all products -->
+<!-- Category Buttons -->
+<div>
+    <button id="btn-krus" class="bg-pink-500">Krus</button>
+    <button id="btn-tote" class="bg-blue-600">Tote</button>
+    <button id="btn-show-all">Show All</button>
   </div>
-
-
-
   
-
-  <script>
-    // JavaScript to toggle categories
-    function filterProducts(kategori) {
-      const products = document.querySelectorAll('.product');
-      products.forEach((product) => {
-        if (kategori === '' || product.dataset.kategori === kategori) {
-          product.style.display = 'block';
-        } else {
-          product.style.display = 'none';
-        }
-      });
-    }
-  </script>
-
-
-
-
-  <!-- Product List -->
-  <ul id="product-list">
-    {data.map((myData) => (
-      <li
-        class="product"
-        data-kategori={myData.kategori}  
-        key={myData.slug}
-      >
-        <!-- Use the Product component and pass the product data -->
-        <Product product={myData} />
-      </li>
-    ))}
-  </ul>
-
+  <section>
+    {
+        data.map(product=>{
+            return <Product data={product} />;
+        })}
+        </section>
 
   <script client:load>
-    // JavaScript to toggle categories
-    function filterProducts(kategori) {
+    // JavaScript for filtering products
+    document.addEventListener("DOMContentLoaded", () => {
       const products = document.querySelectorAll('.product');
-      products.forEach((product) => {
-        if (kategori === '' || product.dataset.kategori === kategori) {
-          product.style.display = 'block';
-        } else {
-          product.style.display = 'none';
-        }
-      });
-    }
+      const filterProducts = (kategori) => {
+        console.log('Filtering category:', kategori); // Debugging
+        products.forEach((product) => {
+          if (kategori === '' || product.dataset.kategori === kategori) {
+            product.style.display = 'block';
+          } else {
+            product.style.display = 'none';
+          }
+        });
+      };
+  
+      // Attach event listeners to buttons
+      document.getElementById('btn-krus').addEventListener('click', () => filterProducts('krus'));
+      document.getElementById('btn-tote').addEventListener('click', () => filterProducts('tote'));
+      document.getElementById('btn-show-all').addEventListener('click', () => filterProducts(''));
+      
+      console.log("Products initialized:", products); // Debugging
+    });
   </script>
+  
