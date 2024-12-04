@@ -8,7 +8,7 @@ const {data} = Astro.props;
 
 <a href={`products/${data.slug}`} class="">
 <article class="flex flex-col">
-    <img src={data.image} alt="">
+    <img class="rounded-tr-[5rem]" src={data.image} alt="">
     <div class="flex flex-row font-mont text-blue-500 text-[9px]">
     <h2 class="fomt-semibold">{data.name}</h2>
     <p class="font-bold"> {data.price}</p>
