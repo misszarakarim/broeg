@@ -15,8 +15,9 @@ const data = await fetch(
 ---
 <!-- Category Buttons -->
 <div>
-    <button id="btn-krus" class="bg-pink-500">Krus</button>
+    <button id="btn-mug" class="bg-pink-500">Mug</button>
     <button id="btn-tote" class="bg-blue-600">Tote</button>
+    <button id="btn-thermo" class="bg-blue-600">Thermo bottle</button>
     <button id="btn-show-all">Show All</button>
 </div>
 
@@ -51,8 +52,9 @@ const data = await fetch(
         };
 
         // Attach event listeners to buttons
-        document.getElementById('btn-krus').addEventListener('click', () => filterProducts('krus'));
+        document.getElementById('btn-mug').addEventListener('click', () => filterProducts('mug'));
         document.getElementById('btn-tote').addEventListener('click', () => filterProducts('tote'));
+        document.getElementById('btn-thermo').addEventListener('click', () => filterProducts('thermo'));
         document.getElementById('btn-show-all').addEventListener('click', () => filterProducts(''));
         
         console.log("Products initialized:", products); // Debugging
