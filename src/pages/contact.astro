@@ -1,0 +1,59 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+<MainLayout>
+  <div class="min-h-screen flex flex-col items-center bg-cream-500 py-6 px-4 font-mont ">
+    <!-- Overskrift -->
+    <h1 class="text-[40px] font-bold text-blue-500 text-center mb-2">CONTACT US!</h1>
+    <p class="text-blue-500 text-[15px] text-center mb-6">Feel free to send us a message</p>
+
+    <!-- Kontaktformular -->
+    <div class="flex flex-col md:flex-row w-full max-w-md md:max-w-lg lg:max-w-xl p-4 rounded-md space-y-6 md:space-y-0 md:space-x-0">
+      
+      <!-- Formular -->
+      <form class="w-full  p-4">
+        <!-- Navn -->
+        <label for="name" class="block text-gray-700 font-medium mb-3">Name *</label>
+        <input
+          type="text"
+          id="name"
+          placeholder="Jane Doe"
+          class="w-full border-4 border-blue-500 rounded-md p-2 mb-5"
+        />
+
+        <!-- Email -->
+        <label for="email" class="block text-gray-700 font-medium mb-3">Email *</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="janedoe@gmail.com"
+          class="w-full border-4 border-blue-500 rounded-md p-2 mb-5"
+        />
+
+        <!-- Besked -->
+        <label for="message" class="block text-gray-700 font-medium mb-3">Message *</label>
+        <textarea
+          id="message"
+          placeholder="Write your message here"
+          class="w-full border-4 border-blue-500 rounded-md p-2 h-[175px] mb-5"
+        ></textarea>
+
+        <!-- Placeholder for knappen -->
+        <div class="w-full bg-gray-300 text-center py-2 rounded-md">
+          [Button Placeholder]
+        </div>
+      </form>
+
+      
+  </div>
+
+  <!-- Billede (skjules på mobil og vises i webformat) -->
+      <div class="hidden md:block w-full md:w-1/2 pl-6 md:ml-8">
+        <img src="/broeg-kop2.png" class="w-full h-auto">
+      </div>
+
+    </div>
+</MainLayout>
+
+
+
