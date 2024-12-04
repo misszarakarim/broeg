@@ -1,5 +1,6 @@
 ---
 import Product from "../components/Products.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
 
 
@@ -13,11 +14,14 @@ const data = await fetch(
 }
 ).then((res) => res.json());
 ---
+
+<MainLayout>
+<h1 class="text-cyan-500">BRØG MARKET</h1>
 <!-- Category Buttons -->
 <div>
-    <button id="btn-mug" class="bg-pink-500">Mug</button>
-    <button id="btn-tote" class="bg-blue-600">Tote</button>
-    <button id="btn-thermo" class="bg-blue-600">Thermo bottle</button>
+    <button id="btn-mug" class="">Mugs</button>
+    <button id="btn-tote" class="">Totebags</button>
+    <button id="btn-thermo" class="">Thermo cup</button>
     <button id="btn-show-all">Show All</button>
 </div>
 
@@ -33,6 +37,8 @@ const data = await fetch(
         </div>
     ))}
 </section>
+
+</MainLayout>
 
 <script client:load>
     document.addEventListener("DOMContentLoaded", () => {
