@@ -18,7 +18,7 @@ const data = await fetch(
 <MainLayout>
 <h1 class="text-blue-500 font-mont font-medium text-[40px] flex items-center justify-center ">BRØG MARKET</h1>
 <!-- Category Buttons -->
-<div class="text-blue-500 font-mont font-bold text-[14px] flex space-x-4 justify-center items-center">
+<div class="text-blue-500 font-mont font-bold text-[14px] flex space-x-4 justify-center items-center mt-11">
     <button id="btn-mug" class="">Mugs</button>
     <button id="btn-tote" class="">Totebags</button>
     <button id="btn-thermo" class="">Thermo cup</button>
@@ -26,7 +26,7 @@ const data = await fetch(
 </div>
 
 <!-- Product List -->
-<section class="grid grid-cols-3" id="product-list">
+<section class="grid grid-cols-3 gap-5 mt-20 mx-10" id="product-list">
     {data.map((product) => (
         <div 
             class="product" 
