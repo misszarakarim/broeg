@@ -9,9 +9,10 @@ const {data} = Astro.props;
 <a href={`products/${data.slug}`} class="">
 <article class="flex flex-col">
     <img class="rounded-tr-[5rem]" src={data.image} alt="">
-    <div class="flex flex-row font-mont text-blue-500 text-[9px]">
-    <h2 class="fomt-semibold">{data.name}</h2>
-    <p class="font-bold"> {data.price}</p>
+    <div class="grid grid-cols-3 font-mont text-blue-500 text-[9px] border-2 border-blue-500 ">
+    <h2 class="fomt-semibold justify-self-center">{data.name}</h2>
+    <div class="bg-blue-500 w-[2px] justify-self-center"></div>
+    <p class="font-bold justify-self-center"> {data.price}</p>
    </div>
 </article></a>
 
