@@ -31,10 +31,10 @@ console.log(myData);
   <article class="grid grid-cols-1 justify-items-center">
   <h1 class="text-blue-500 font-mont font-medium text-[40px] flex">{myData.name}</h1>
 
-<img class="mt-11 w-60 h-60 rounded-tr-[5rem]" src={myData.image} alt="">
-<div class="flex flex-row gap-4">
-<img class="h-28 w-28 opacity-50 " src={myData.image} alt="">
-<img class="h-28 w-28 opacity-50 " src={myData.image1} alt="">
+<img id="bigImage" class="mt-11 w-60 h-60 rounded-tr-[5rem]" src={myData.image} alt="">
+<div class="flex flex-row gap-4 mt-4">
+<img class="h-28 w-28 opacity-50 " src={myData.image} alt="" onclick="changeImage(this)">
+<img class="h-28 w-28 opacity-50 " src={myData.image1} alt="" onclick="changeImage(this)">
 </div>
 </article>
 
@@ -58,7 +58,12 @@ console.log(myData);
 
 
 </section>
-
+<script client:load>
+  function changeImage(smallImg) {
+    const bigImage = document.getElementById('bigImage');
+    bigImage.src = smallImg.src; // Set the large image's src to the clicked image's src
+  }
+</script>
 
 </MainLayout>
 
