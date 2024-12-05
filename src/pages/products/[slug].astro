@@ -42,6 +42,17 @@ console.log(myData);
 <h3 class=" mt-11 font-bold font-mont text-[20px] ">{myData.price} <span>DKK</span></h3>
 
 <p class="leading-7 font-mont text-[13px] mt-4">{myData.description}</p>
+
+
+<form class="flex flex-row" name="f1">
+  <input type='button' name='subtract' onclick='javascript: subtractQty();' value='-' />
+  <p name='qty' id='qty'>1</p>
+  <input type='button' name='add' onclick='javascript: document.getElementById("qty").innerHTML++;' value='+' />
+
+</form>
+
+
+
 <h3 class="font-bold flex font-mont text-[20px] mt-11">Details</h3>
 <div class="Flex flex-col justify-center items-center font-mont mt-3 " >
 
@@ -57,12 +68,27 @@ console.log(myData);
 
 
 
+
+
+
+
+
+
 </section>
 <script client:load>
   function changeImage(smallImg) {
     const bigImage = document.getElementById('bigImage');
     bigImage.src = smallImg.src; // Set the large image's src to the clicked image's src
   }
+
+
+
+  function subtractQty() {
+  if (document.getElementById("qty").innerHTML - 1 < 0)
+    return;
+  else
+    document.getElementById("qty").innerHTML--;
+}
 </script>
 
 </MainLayout>
