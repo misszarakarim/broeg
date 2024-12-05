@@ -44,9 +44,11 @@ console.log(myData);
 <p class="leading-7 font-mont text-[13px] mt-4">{myData.description}</p>
 
 
-<form class="flex flex-row" name="f1">
+<form class="border-2 grid grid-cols-[1fr_2px_1fr_2px_1fr] border-brown-500" name="f1">
   <input type='button' name='subtract' onclick='javascript: subtractQty();' value='-' />
-  <p name='qty' id='qty'>1</p>
+  <div class="bg-brown-500 w-[2px]"></div>
+  <p name='qty' id='qty' class="justify-center items-center flex">1</p>
+  <div class="bg-brown-500 w-[2px]"></div>
   <input type='button' name='add' onclick='javascript: document.getElementById("qty").innerHTML++;' value='+' />
 
 </form>
