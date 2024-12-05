@@ -27,8 +27,37 @@ console.log(myData);
 ---
 
 <MainLayout title={myData.name}>
-<h2>{myData.name}</h2>
-<h4>{myData.price}</h4>
+  <section class="mx-12">
+  <article class=" grid grid-cols-1 justify-items-center">
+  <h1 class="text-blue-500 font-mont font-medium text-[40px] flex">{myData.name}</h1>
+
+<img class="mt-11 w-60 h-60 rounded-tr-[5rem]" src={myData.image} alt="">
+<div class="flex flex-row">
+<img class="h-28 w-28 opacity-50 " src={myData.image} alt="">
+<img class="h-28 w-28 opacity-50 " src={myData.image1} alt="">
+</div>
+</article>
+
+
+<h3 class="font-bold font-mont text-[20px]">{myData.price}</h3>
+
+<p class="font-mont text-[13px]">{myData.description}</p>
+<h3 class="font-bold flex justify-center items-center font-mont text-[20px]">Details</h3>
+<div class="Flex flex-col justify-center items-center font-mont" >
+
+
+
+  <p class="font-semibold font-mont">Washing instructions</p>
+   <p class="font-mont text-[13px]">{myData.vaskeanvisning}</p> 
+   <p class="font-semibold font-mont">Size</p>
+  <p class="font-mont text-[13px]">{myData.size}</p>
+  <p class="font-semibold font-mont">Material</p>
+<p class="font-mont text-[13px]">{myData.materiale}</p>
+</div>
+
+
+
+</section>
 
 
 </MainLayout>
