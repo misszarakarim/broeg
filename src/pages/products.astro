@@ -1,0 +1,68 @@
+---
+import Product from "../components/Products.astro";
+import MainLayout from "../layouts/MainLayout.astro";
+
+
+
+const data = await fetch(
+    "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products", 
+    {
+    method:"GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlubm5qeHlhcXlqY2V1Y2l6cHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MzM3NDQsImV4cCI6MjA0ODEwOTc0NH0.j0GJ0nKDs09Qd39B_PxaBwDX69ZrOxYTNXPoTfzAWbI"
+    },
+}
+).then((res) => res.json());
+---
+
+<MainLayout>
+<h1 class="text-blue-500 font-mont font-medium text-[40px] flex items-center justify-center ">BRØG MARKET</h1>
+<!-- Category Buttons -->
+<div class="text-blue-500 font-mont font-bold text-[14px] flex space-x-4 justify-center items-center mt-11">
+    <button id="btn-mug" class="">Mugs</button>
+    <button id="btn-tote" class="">Totebags</button>
+    <button id="btn-thermo" class="">Thermo cup</button>
+    <button id="btn-show-all">Show All</button>
+</div>
+
+<!-- Product List -->
+<section class="flex flex-wrap justify-center items-center  gap-7 mt-20 max-w-[60rem] mx-auto " id="product-list">
+    {data.map((product) => (
+        <div 
+            class="product" 
+            data-kategori={product.kategori} 
+            key={product.slug}
+        >
+            <Product data={product} />
+        </div>
+    ))}
+</section>
+
+</MainLayout>
+
+<script client:load>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Select all product elements
+        const products = document.querySelectorAll('.product');
+
+        // Function to filter products based on category
+        const filterProducts = (kategori) => {
+            console.log('Filtering category:', kategori); // Debugging
+            products.forEach((product) => {
+                if (kategori === '' || product.dataset.kategori === kategori) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        };
+
+        // Attach event listeners to buttons
+        document.getElementById('btn-mug').addEventListener('click', () => filterProducts('mug'));
+        document.getElementById('btn-tote').addEventListener('click', () => filterProducts('tote'));
+        document.getElementById('btn-thermo').addEventListener('click', () => filterProducts('thermo'));
+        document.getElementById('btn-show-all').addEventListener('click', () => filterProducts(''));
+        
+        console.log("Products initialized:", products); // Debugging
+    });
+</script>
