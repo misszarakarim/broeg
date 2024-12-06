@@ -1,0 +1,47 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout>
+
+ <!-- Centrering af h1 -->
+
+  <div class="flex justify-center items-center mt-8">
+    <h1 class="text-[40px] text-blue-500 text-center">ABOUT US</h1>
+  </div>
+
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-10 font-mont">
+
+
+  <!-- Banner kommer ind her -->
+
+  <!-- GIF med blå baggrund -->
+  <div class="bg-blue-500 flex justify-center items-center p-8 order-1 md:order-none">
+    <img
+      src="your-gif-url.gif"
+      alt="Description of GIF"
+      class="w-64 h-64 object-cover"
+    />
+  </div>
+
+  <!-- Teksten -->
+  <div class="order-2 md:order-none text-[13px] leading-7 px-5">
+    <p class=" ">
+      BRØG is a mobile knowledge sharing platform for all who enjoy a good
+      cup of coffee. It allows you to scan a bag of coffee beans and
+      instantly access a wealth of information on how others have rated and
+      reviewed the same coffee, helping you gauge the overall quality,
+      popularity, and aromatic notes of the product.
+    </p>
+    <p class="mt-4 border-b-[4px] border-blue-500 pb-7 mb-10">
+      Based on your preferences and past ratings, BRØG uses Artificial
+      Intelligence to create personalized coffee recommendations, making it
+      easier to discover new coffees more suitable to your taste. BRØG
+      supports ethical and sustainable coffee consumption by highlighting
+      information about sustainable and ethical coffee sourcing practices,
+      enabling you to support responsible coffee producers.
+    </p>
+  </div>
+</div>
+
+</MainLayout>
