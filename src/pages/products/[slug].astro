@@ -34,14 +34,14 @@ console.log(myData);
   <section class="mx-12">
   <article class="grid grid-cols-1 justify-items-center">
 
-<img id="bigImage" class="mt-11 w-60 h-60 rounded-tr-[5rem]" src={myData.image} alt="">
-<div class="flex flex-row gap-4 mt-4">
-<img class="h-28 w-28 opacity-50 curser-pointer" src={myData.image} alt="" onclick="changeImage(this)">
-<img class="h-28 w-28 opacity-50 curser-pointer" src={myData.image1} alt="" onclick="changeImage(this)">
+<img id="bigImage" class="mt-11 w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-tr-[5rem]" src={myData.image} alt="">
+<div class="flex flex-row gap-4 md:gap-12 lg:gap-16 mt-4">
+<img class="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 opacity-50 curser-pointer" src={myData.image} alt="" onclick="changeImage(this)">
+<img class="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 opacity-50 curser-pointer" src={myData.image1} alt="" onclick="changeImage(this)">
 </div>
 </article>
 </div>
-<div>
+<div class="md:mr-20 lg:mr-44">
 
 <h3 class=" mt-11 font-bold font-mont text-[20px] ">{myData.price} <span>DKK</span></h3>
 
