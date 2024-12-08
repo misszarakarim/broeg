@@ -1,0 +1,40 @@
+---
+const {overskrift} = Astro.props;
+
+---
+
+<div class="banner h-[60px] md:h-[80px] xl:h-[120px] border-y-4 border-blue-500">
+    <div class="track">
+      <div class="content w-full text-blue-500 text-[35px] font-mont md:text-[50px] xl:text-[96px]">{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overskrift}</div>
+    </div>
+  
+    <style>
+      .banner {
+        position: relative;
+      
+        overflow-x: hidden;
+        background-image: url("grid.png");
+        background-size:  auto;
+        font-weight: bold;
+  
+        display: flex;
+        align-items: center;
+      }
+  
+      .track {
+        position: absolute;
+        white-space: nowrap;
+        will-change: transform;
+        animation: banner 10s linear infinite;
+      }
+  
+      @keyframes banner {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+    </style>
+  </div>
