@@ -27,25 +27,26 @@ console.log(myData);
 ---
 
 <MainLayout title={myData.name}> 
+  <section class="grid justify-center items-center">
    <h1 class="text-blue-500 font-mont font-medium text-[40px] flex justify-center items-center mt-11 md:ml-60 lg:ml-80 md:text-[65px] lg:text-[90px]">{myData.name}</h1>
 
   <div class="md:grid md:grid-cols-2">
     <div class="md:mt-[-7.5rem] lg:mt-[-9.5rem]">
-  <section class="mx-12">
+  <section class="lg:ml-[11rem] lg:mr-[5rem]">
   <article class="grid grid-cols-1 justify-items-center">
 
-<img id="bigImage" class="mt-11 w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-tr-[5rem]" src={myData.image} alt="">
+<img id="bigImage" class="mt-11 w-60 h-60 md:w-80 md:h-80 lg:w-[22rem] lg:h-[22rem] xl:w-96 xl:h-96 rounded-tr-[5rem]" src={myData.image} alt="">
 <div class="flex flex-row gap-4 md:gap-12 lg:gap-16 mt-4">
-<img class="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 opacity-50 curser-pointer" src={myData.image} alt="" onclick="changeImage(this)">
-<img class="h-28 w-28 md:h-32 md:w-32 lg:h-40 lg:w-40 opacity-50 curser-pointer" src={myData.image1} alt="" onclick="changeImage(this)">
+<img class="h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36 xl:h-40 xl:w-40 opacity-50 curser-pointer" src={myData.image} alt="" onclick="changeImage(this)">
+<img class="h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36 xl:h-40 xl:w-40 opacity-50 curser-pointer" src={myData.image1} alt="" onclick="changeImage(this)">
 </div>
 </article>
 </div>
 <div class=" mx-14 md:mx-0 lg:mx-0 md:mr-20 lg:mr-44">
 
-<h3 class=" mt-11 font-bold font-mont text-[20px] ">{myData.price} <span>DKK</span></h3>
+<h3 class=" mt-11 font-bold font-mont text-[20px] md:text-[34px] ">{myData.price} <span>DKK</span></h3>
 
-<p class="leading-7 font-mont text-[13px] mt-4">{myData.description}</p>
+<p class="leading-7 font-mont text-[13px] md:text-[16px]  mt-4">{myData.description}</p>
 
 <section class="flex flex-row justify-between mt-5">
 <form class="border-2 grid grid-cols-[1fr_3px_1fr_3px_1fr] lg:grid-cols-[2fr_10px_2fr_10px_2fr] border-brown-500" name="f1">
@@ -67,15 +68,16 @@ console.log(myData);
 
 
   <p class="font-semibold font-mont ">Washing instructions</p>
-   <p class="leading-7 font-mont text-[13px] mt-2">{myData.vaskeanvisning}</p> 
+   <p class="leading-7 font-mont text-[13px] md:text-[16px] mt-2">{myData.vaskeanvisning}</p> 
    <p class="font-semibold font-mont mt-5">Size</p>
-  <p class=" leading-7 font-mont text-[13px] mt-2">{myData.size}</p>
+  <p class=" leading-7 font-mont text-[13px] md:text-[16px] mt-2">{myData.size}</p>
   <p class="font-semibold font-mont mt-5">Material</p>
-<p class="leading-7 font-mont text-[13px] mt-2">{myData.materiale}</p>
+<p class="leading-7 font-mont text-[13px] md:text-[16px] mt-2">{myData.materiale}</p>
 </div>
 </div>
 
 </div>
+</section>
 
 
 
