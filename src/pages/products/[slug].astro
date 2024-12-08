@@ -27,6 +27,8 @@ console.log(myData);
 ---
 
 <MainLayout title={myData.name}>
+  <div class="md:flex md:flex-row">
+    <div>
   <section class="mx-12">
   <article class="grid grid-cols-1 justify-items-center">
   <h1 class="text-blue-500 font-mont font-medium text-[40px] flex">{myData.name}</h1>
@@ -37,7 +39,8 @@ console.log(myData);
 <img class="h-28 w-28 opacity-50 curser-pointer" src={myData.image1} alt="" onclick="changeImage(this)">
 </div>
 </article>
-
+</div>
+<div>
 
 <h3 class=" mt-11 font-bold font-mont text-[20px] ">{myData.price} <span>DKK</span></h3>
 
@@ -69,9 +72,9 @@ console.log(myData);
   <p class="font-semibold font-mont mt-5">Material</p>
 <p class="leading-7 font-mont text-[13px] mt-2">{myData.materiale}</p>
 </div>
+</div>
 
-
-
+</div>
 
 
 
