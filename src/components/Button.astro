@@ -5,8 +5,8 @@ const buttonStyling = "text-cream-500 bg-brown-500 font-mont font-bold text-[13p
 
 
 const variantClasses = {
-    "primary": " hover:animate-spin",
-    "secondary": "bg-lime-500 hover:bg-lime-700"
+    "primary": "px-5 py-2 hover:animate-spin",
+    "secondary": "rounded-full p-4"
 };
 ---
 <button class:list={[buttonStyling, variantClasses[variant]]}><slot /></button>
