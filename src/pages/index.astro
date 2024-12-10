@@ -7,8 +7,25 @@ import Quote from "../components/Quote.astro";
 import Test from "../components/Test.astro"
 
 
+const data = await fetch(
+    "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products", 
+    {
+    method:"GET",
+    headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlubm5qeHlhcXlqY2V1Y2l6cHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MzM3NDQsImV4cCI6MjA0ODEwOTc0NH0.j0GJ0nKDs09Qd39B_PxaBwDX69ZrOxYTNXPoTfzAWbI"
+    },
+}
+).then((res) => res.json());
 ---
 <MainLayout title="Titel">
+
+	<section class="produkter">
+		{data.map(produkt=>{
+			return <Test data={produkt}/>;
+		})}
+		
+	</section>
+	
 	<article>
 		<p class="bg-purple-300">Index indhold</p>
 	<section class="products">
@@ -27,7 +44,7 @@ import Test from "../components/Test.astro"
 	
 
 	
-<Test />
+
 
 </MainLayout>
 
