@@ -19,27 +19,35 @@ const data = await fetch(
 ---
 <MainLayout title="Titel">
 
+	<!-- Shop section start -->
 	<section class="produkter flex flex-wrap justify-center items-center  gap-7 mt-20 max-w-[60rem] mx-auto">
 		{data.map(produkt=>{
 			return <Test data={produkt}/>;
 		})}
 		
 	</section>
+	<!--Shop section slut -->
 	
-	<article>
-		<p class="bg-purple-300">Index indhold</p>
-	<section class="products">
-		
+	
+<!-- Banner start -->
 <Banner overskrift="TEST"></Banner>
-		
+<!-- Banner slut -->
+
+
+
+<!-- Knap med tekst start -->
 <Button variant="primary">hej med dig</Button>
+<!-- Knap med tekst slut -->
+
+<!-- Arrow knap start-->
 <Button variant="secondary">
 	<img class="h-5 w-5 flex justify-center items-center pl-1 md:h-6 md:w-6 xl:h-7 lg:w-7" src="/arrow.png" alt="">
 </Button>
-	</section>	</article>
+<!-- Arrow knap start-->
 
-	
-	<Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT"></Quotequote></Quote>
+<!-- Quote start -->
+<Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT"></Quotequote></Quote>
+<!-- Quote slut -->
 
 	
 
