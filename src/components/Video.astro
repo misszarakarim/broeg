@@ -1,8 +1,40 @@
 ---
-const { quote } = Astro.props;
+import Button from "./Button.astro";
 ---
 
-<video class="w-full h-full object-cover" autoplay muted loop>
-  <source src="video.mp4" type="video/mp4" />
-  Din browser understøtter ikke videoafspilning.
-</video>
+<div class="relative w-full h-full overflow-hidden">
+  <!-- Video -->
+  <video id="video" class="w-full h-full object-cover" autoplay muted>
+    <source src="herovid.mp4" type="video/mp4" />
+    Din browser understøtter ikke videoafspilning.
+  </video>
+
+  <!-- Responsiv Play-knap -->
+  <button
+    id="playButton"
+    class="hidden absolute bottom-2 right-4 bg-brown-500 text-cream-500 font-mont px-3 py-1 sm:px-4 sm:py-2 lg:px-6 lg:py-3 text-sm sm:text-base lg:text-lg rounded-lg shadow-lg hover:bg-blue-600 hover:shadow-xl transition-all duration-200"
+  >
+    ▶ Play
+  </button>
+</div>
+
+<script>
+  const video = document.getElementById("video");
+  const playButton = document.getElementById("playButton");
+  let playCount = 0;
+
+  video.addEventListener("ended", () => {
+    playCount++;
+    if (playCount < 2) {
+      video.play();
+    } else {
+      playButton.classList.remove("hidden");
+    }
+  });
+
+  playButton.addEventListener("click", () => {
+    playCount = 0;
+    video.play();
+    playButton.classList.add("hidden");
+  });
+</script>
