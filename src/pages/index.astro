@@ -6,6 +6,7 @@ import Banner from "../components/Banner.astro";
 import Quote from "../components/Quote.astro";
 import Test from "../components/Test.astro";
 import Video from "../components/Video.astro";
+import Download from "../components/Download.astro";
 
 const data = await fetch(
   "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products?limit=2&offset=0",
@@ -60,4 +61,7 @@ const data = await fetch(
   <!-- Quote start -->
   <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
   <!-- Quote slut -->
+
+
+  <Download></Download>
 </MainLayout>
