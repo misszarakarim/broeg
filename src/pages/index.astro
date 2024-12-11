@@ -30,7 +30,7 @@ const data = await fetch(
 <!-- første box slut -->
 
   <!-- Quote start -->
-  <div class="">
+  <div class="md:mt-[-10rem] mb-16">
   <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
   </div>
   <!-- Quote slut -->
@@ -40,12 +40,14 @@ const data = await fetch(
   <!-- kort section slut -->
 
   <!-- Banner start -->
+  <div>
   <Banner overskrift="BRØG MARKET" />
+  </div>
   <!-- Banner slut -->
 
   <!-- Shop section start -->
   <section
-    class="produkter flex flex-wrap justify-center items-center gap-7 mt-20 max-w-[60rem] mx-auto"
+    class="produkter flex flex-wrap justify-center items-center gap-7 mt-20 max-w-[60rem] mx-auto mb-[50px]"
   >
     {
       data.map((produkt) => {
@@ -53,6 +55,21 @@ const data = await fetch(
       })
     }
   </section>
+
+  <div class="flex justify-center items-center gap-4 mb-14">
+	<h3 class="text-[20px] md:text-[24px] lg:text-[34px]">Click to see more</h3>
+	
+	<a href="/products">
+	<Button variant="secondary">
+    <img
+      class="h-5 w-5 flex justify-center items-center pl-1 md:h-6 md:w-6 xl:h-7 lg:w-7"
+      src="/arrow.png"
+      alt=""
+    />
+  </Button>
+  </a>
+  </div>
+
   <!--Shop section slut -->
 
  <!-- Banner start -->
@@ -62,20 +79,6 @@ const data = await fetch(
    <!-- Review start -->
   <Review />
    <!-- Review slut -->
-
-  <!-- Arrow knap start-->
-  <Button variant="secondary">
-    <img
-      class="h-5 w-5 flex justify-center items-center pl-1 md:h-6 md:w-6 xl:h-7 lg:w-7"
-      src="/arrow.png"
-      alt=""
-    />
-  </Button>
-  <!-- Arrow knap start-->
-
-  <!-- Quote start -->
-  <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
-  <!-- Quote slut -->
 
 
   <Download></Download>
