@@ -3,15 +3,16 @@ import Button from "./Button.astro";
 ---
 
 
-<section class="py-10 md:py-20">
+<section class="py-10">
   <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center font-mont border-b-4 border-blue-500 md:mb-40">
 
     <!-- Tekst -->
-    <div class="relative leading-6 sm:leading-8 md:leading-9 px-4 sm:px-8 md:px-10 text-[15px] lg:px-24 xl:text-[24px] 
-      md:border-r-4 md:border-blue-500 md:h-full text-center md:text-left"> <!-- Tilføjet text-center kun på små skærme -->
+    <div class="relative leading-normal px-4 sm:px-8 md:px-10 text-[15px] lg:px-24 xl:text-[24px] 
+      md:border-r-4 md:border-blue-500 md:h-full text-center md:text-left"> <!-- Tilpasset leading -->
       
-      <h1 class="text-[22px] sm:text-[28px] md:text-[40px] lg:text-[64px] text-blue-500 font-bold py-4">
-        GOOD COFFEE FOR EVERYONE
+      <h1 class="text-[22px] sm:text-[28px] md:text-[40px] lg:text-[62px] text-blue-500 font-bold py-4">
+        <span class="block md:inline">GOOD COFFEE</span>
+        <span class="block md:inline">FOR EVERYONE</span>
       </h1>
 
       <p class="mt-2 sm:mt-3 lg:mt-4">
@@ -21,21 +22,25 @@ import Button from "./Button.astro";
         Read more about BRØG here
       </p>
       
+      <div class="lg:pb-16">
       <Button variant="primary">Download now</Button>
+      </div>
 
     </div>
 
     <!-- Billede -->
     <div class="flex justify-center items-center px-6 sm:px-8 md:px-10 lg:px-16 py-6 sm:py-8">
       <img 
-        src="/broeg-kop2.png" 
-        alt="Gif" 
+        src="/broeggif.gif" 
+        alt="BRØG cup" 
         class="w-full max-w-[200px] sm:max-w-[250px] md:max-w-[300px] lg:max-w-[300px] xl:max-w-[300px] object-contain"
       />
     </div>
 
   </div>
 </section>
+
+
 
 
 
