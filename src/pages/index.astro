@@ -1,59 +1,66 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
+import Button from "../components/Button.astro";
 import Contact from "./contact.astro";
 import Banner from "../components/Banner.astro";
 import Quote from "../components/Quote.astro";
-import Test from "../components/Test.astro"
-
+import Test from "../components/Test.astro";
 
 const data = await fetch(
-    "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products?limit=2&offset=0", 
-    {
-    method:"GET",
+  "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products?limit=2&offset=0",
+  {
+    method: "GET",
     headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlubm5qeHlhcXlqY2V1Y2l6cHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MzM3NDQsImV4cCI6MjA0ODEwOTc0NH0.j0GJ0nKDs09Qd39B_PxaBwDX69ZrOxYTNXPoTfzAWbI"
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlubm5qeHlhcXlqY2V1Y2l6cHhsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzI1MzM3NDQsImV4cCI6MjA0ODEwOTc0NH0.j0GJ0nKDs09Qd39B_PxaBwDX69ZrOxYTNXPoTfzAWbI",
     },
-}
+  }
 ).then((res) => res.json());
 ---
+
 <MainLayout title="Titel">
+  <video class="w-full h-full object-cover" autoplay muted loop>
+    <source src="video.mp4" type="video/mp4" />
+    Din browser understøtter ikke videoafspilning.
+  </video>
 
-	<!-- Shop section start -->
-	<section class="produkter flex flex-wrap justify-center items-center  gap-7 mt-20 max-w-[60rem] mx-auto">
-		{data.map(produkt=>{
-			return <Test data={produkt}/>;
-		})}
-		
-	</section>
-	<!--Shop section slut -->
-	
-	
-<!-- Banner start -->
-<Banner overskrift="TEST"></Banner>
-<!-- Banner slut -->
+  <h1>TEST TEST TEST</h1>
+  <!-- Quote start -->
+  <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
 
+  <!-- Quote slut -->
+  <!-- kort section start -->
+  <h1>TEST TEST TEST</h1>
+  <!-- Banner start -->
+  <Banner overskrift="TEST" />
+  <!-- Banner slut -->
+  <!-- Shop section start -->
+  <section
+    class="produkter flex flex-wrap justify-center items-center gap-7 mt-20 max-w-[60rem] mx-auto"
+  >
+    {
+      data.map((produkt) => {
+        return <Test data={produkt} />;
+      })
+    }
+  </section>
+  <!--Shop section slut -->
 
+  <!-- Knap med tekst start -->
+  <Button variant="primary">hej med dig</Button>
+  <!-- Knap med tekst slut -->
 
-<!-- Knap med tekst start -->
-<Button variant="primary">hej med dig</Button>
-<!-- Knap med tekst slut -->
+  <!-- Arrow knap start-->
+  <Button variant="secondary">
+    <img
+      class="h-5 w-5 flex justify-center items-center pl-1 md:h-6 md:w-6 xl:h-7 lg:w-7"
+      src="/arrow.png"
+      alt=""
+    />
+  </Button>
+  <!-- Arrow knap start-->
 
-<!-- Arrow knap start-->
-<Button variant="secondary">
-	<img class="h-5 w-5 flex justify-center items-center pl-1 md:h-6 md:w-6 xl:h-7 lg:w-7" src="/arrow.png" alt="">
-</Button>
-<!-- Arrow knap start-->
-
-<!-- Quote start -->
-<Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT"></Quotequote></Quote>
-<!-- Quote slut -->
-
-	
-
-	
-
-
+  <!-- Quote start -->
+  <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
+  <!-- Quote slut -->
 </MainLayout>
-
-
