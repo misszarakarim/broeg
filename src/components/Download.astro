@@ -3,13 +3,13 @@ import Button from "./Button.astro"
 ---
 
 
-<section class="grid grid-cols-[auto,1fr] items-center gap-4 sm:flex sm:flex-row sm:justify-center sm:items-center">
-<img class="h-40 sm:h-48 m-5" src="/broeggif.gif" alt="">
+<section class="grid grid-cols-[auto,1fr] items-center gap-4 sm:flex sm:flex-row sm:justify-center sm:items-center lg:-mb-32">
+<img class="h-40 sm:h-48 m-5 md:h-64 lg:h-96 xl:h-[30rem]" src="/broeggif.gif" alt="">
 
-<div class="flex flex-col justify-center items-center ">
-<p class="font-mont mb-4 text-blue-500 font-bold text-[16px] sm:text-[20px] ">Read more in the BRØG app</p>
+<div class="flex flex-col justify-center items-center lg:mx-16">
+<p class="font-mont mb-4 md:mb-7 text-blue-500 font-bold text-[16px] sm:text-[20px] md:text-[22px] lg:text-[30px] xl:text-[34px]">Read more in the BRØG app</p>
 
 <Button variant="primary">Download now</Button>
 </div>
-<img class="hidden sm:block sm:h-48" src="/broeggif.gif" alt="">
+<img class="hidden sm:block sm:h-48 md:h-64 lg:h-96 xl:h-[30rem] " src="/broeggif.gif" alt="">
 </section>
