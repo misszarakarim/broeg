@@ -1,12 +1,14 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
-import Contact from "./contact.astro";
 import Banner from "../components/Banner.astro";
 import Quote from "../components/Quote.astro";
 import Test from "../components/Test.astro";
 import Video from "../components/Video.astro";
 import Download from "../components/Download.astro";
+import FirstBox from "../components/FirstBox.astro";
+import SecondBox from "../components/SecondBox.astro";
+import Review from "../components/Review.astro";
 
 const data = await fetch(
   "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products?limit=2&offset=0",
@@ -22,16 +24,23 @@ const data = await fetch(
 
 <MainLayout title="Titel">
   <Video />
-  <h1>TEST TEST TEST</h1>
+  
+<!-- første box start -->
+  <FirstBox />
+<!-- første box slut -->
+
   <!-- Quote start -->
   <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
-
   <!-- Quote slut -->
+
   <!-- kort section start -->
-  <h1>TEST TEST TEST</h1>
+<SecondBox />
+  <!-- kort section slut -->
+
   <!-- Banner start -->
-  <Banner overskrift="TEST" />
+  <Banner overskrift="BRØG MARKET" />
   <!-- Banner slut -->
+
   <!-- Shop section start -->
   <section
     class="produkter flex flex-wrap justify-center items-center gap-7 mt-20 max-w-[60rem] mx-auto"
@@ -44,9 +53,13 @@ const data = await fetch(
   </section>
   <!--Shop section slut -->
 
-  <!-- Knap med tekst start -->
-  <Button variant="primary">hej med dig</Button>
-  <!-- Knap med tekst slut -->
+ <!-- Banner start -->
+  <Banner overskrift="REVIEW" />
+  <!-- Banner slut -->
+
+   <!-- Review start -->
+  <Review />
+   <!-- Review slut -->
 
   <!-- Arrow knap start-->
   <Button variant="secondary">
