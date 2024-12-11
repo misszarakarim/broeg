@@ -1,17 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Banner from "../components/Banner.astro";
+import Quote from "../components/Quote.astro";
 ---
 
 <MainLayout>
 
   <!-- Centrering af h1 -->
-  <div class="flex justify-center items-center mt-8">
+  <div class="flex justify-center items-center my-8">
     <h1 class="text-[5vw] text-blue-500 text-center sm:text-[40px] lg:text-[90px]">ABOUT US</h1>
   </div>
 
+  <Banner overskrift="VISION"></Banner>
+
  <!-- HVEM/HVAD ER BRØG -->
 
-  <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center mt-10 font-mont border-y-4 border-blue-500">
+  <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center mt-0 font-mont border-b-4 border-blue-500">
     
     <!-- Blå boks billede -->
     <div class="bg-blue-500 flex justify-center items-center p-10 h-auto sm:h-[625px] lg:h-[px400] xl:h-[530px]">
@@ -31,7 +35,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         reviewed the same coffee, helping you gauge the overall quality,
         popularity, and aromatic notes of the product.
       </p>
-      <p class="mt-4 lg:mb-1">
+      <p class="mt-4 lg:mb-1 ">
         Based on your preferences and past ratings, BRØG uses Artificial
         Intelligence to create personalized coffee recommendations, making it
         easier to discover new coffees more suitable to your taste. BRØG
@@ -42,9 +46,15 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </div>
 
+  <Quote quote=" Changing the way you choose your coffee."></Quote>
+
+  <div class="mt-10">
+    <Banner overskrift="DREAM TEAM"></Banner>
+    </div>
+
     <!-- DREAM TEAM DEL -->
 
-  <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center mt-10 font-mont border-y-4 border-blue-500 mb-40">
+  <div class="mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-center font-mont border-b-4 border-blue-500 mb-40">
     
     <div class="text-[13px] leading-7 md:leading-9 px-4 md:px-6 sm:text-[13px] lg:text-[15px] lg:px-16 xl:text-[16px] my-3">
       
@@ -54,6 +64,7 @@ import MainLayout from "../layouts/MainLayout.astro";
            <p class="mt-2 lg:mb-1"> We met in 2020, when we enrolled on our bachelor within Business Administration and IT. Since then, many school projects and, more importantly, many memories have been made together. BRØG is our latest adventure, and we can't wait to have you onboard</p>
     </div>
 
+    
     <!-- Blå boks billede -->
     <div class="bg-blue-500 flex justify-center items-center p-10 h-auto sm:h-[625px] lg:h-[px400] xl:h-[530px]">
       <img 
@@ -64,83 +75,6 @@ import MainLayout from "../layouts/MainLayout.astro";
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-<div class="h-[500px] flex items-center justify-center border-b-4 border-blue-500">
-  <!-- Container for begge bokse -->
-  <div class="flex flex-col md:flex-row w-full justify-between">
-
-    <!-- Første boks -->
-    <div class="relative flex items-center w-full md:w-full md:h-[500px] mb-16 md:mb-0 px-8 md:mr-6">
-      <!-- Venstre tekst "CAFE" -->
-      <div
-        class="absolute left-[-15px] top-[30px] transform -translate-y-1/2 rotate-[-90deg] text-blue-500 font-bold text-[20px] tracking-widest lg:text-[34px]"
-        >CAFE</div>
-
-      <!-- Anmeldelse boks -->
-      <div
-        class="border-blue-500 border-4 shadow-lg p-4 flex items-center text-blue-500 w-full h-[250px] lg:h-[315px]"
-      >
-        <!-- Billede -->
-        <img
-          src="/kaffelatte.png"
-          alt="Kaffe"
-          class="w-[150px] h-[150px] lg:w-[230px] lg:h-[230px]"
-        />
-        <!-- Tekst og overskrift -->
-        <div class="ml-6 text-left">
-          <h2 class="text-[20px] font-bold lg:text-[34px]">Zara Karim</h2>
-          <p class="text-[12px] mt-2 lg:text-[13px]">
-            Lorem ipsum dolor sit amet consectetur. Sed sit dui sit magna urna
-            dictum. Felis malesuada auctor diam leo. Mauris rhoncus non sapien
-            malesuada at augue diam.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Anden boks -->
-    <div class="relative flex items-center w-full md:w-full h-[390px] md:h-[500px] lg:h-[500px] bg-blue-500 px-8 md:ml-6">
-      <!-- Venstre tekst "COFFEE" -->
-      <div
-        class="absolute left-[-30px] top-[115px] transform -translate-y-1/2 rotate-[-90deg] text-cream-500 font-bold text-[20px] tracking-widest lg:text-[34px]"
-        >COFFEE</div>
-
-      <!-- Anmeldelse boks -->
-      <div
-        class="border-cream-500 border-4 shadow-lg p-4 flex items-center text-cream-500 w-full h-[250px] lg:h-[315px]"
-      >
-        <!-- Billede -->
-        <img
-          src="/kaffelatte.png"
-          alt="Kaffe"
-          class="w-[150px] h-[150px] lg:w-[230px] lg:h-[230px]"
-        />
-        <!-- Tekst og overskrift -->
-        <div class="ml-6 text-left">
-          <h2 class="text-[20px] font-bold lg:text-[34px]">Ida Mikkelsen</h2>
-          <p class="text-[12px] lg:text-[13px] mt-2">
-            Lorem ipsum dolor sit amet consectetur. Sed sit dui sit magna urna
-            dictum. Felis malesuada auctor diam leo. Mauris rhoncus non sapien
-            malesuada at augue diam.
-          </p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-
-
+  
 
 </MainLayout>
