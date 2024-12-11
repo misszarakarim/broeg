@@ -5,6 +5,7 @@ import Contact from "./contact.astro";
 import Banner from "../components/Banner.astro";
 import Quote from "../components/Quote.astro";
 import Test from "../components/Test.astro";
+import Video from "../components/Video.astro";
 
 const data = await fetch(
   "https://innnjxyaqyjceucizpxl.supabase.co/rest/v1/products?limit=2&offset=0",
@@ -19,11 +20,7 @@ const data = await fetch(
 ---
 
 <MainLayout title="Titel">
-  <video class="w-full h-full object-cover" autoplay muted loop>
-    <source src="video.mp4" type="video/mp4" />
-    Din browser understøtter ikke videoafspilning.
-  </video>
-
+  <Video />
   <h1>TEST TEST TEST</h1>
   <!-- Quote start -->
   <Quote quote="LIFE IS LIKE A CUP OF COFFEE IT’S ALL ABOUT HOW YOU MAKE IT" />
