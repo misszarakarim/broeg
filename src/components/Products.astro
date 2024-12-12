@@ -2,7 +2,7 @@
 const { data } = Astro.props;
 ---
 
-<a href={`products/${data.slug}`} class="">
+<a href={`/${data.slug}`} class="">
   <article class="flex flex-col">
     <img class="rounded-tr-[5rem] w-40 sm:w-60" src={data.image} alt={data.alttext} />
     <div
