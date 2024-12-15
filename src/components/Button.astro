@@ -1,5 +1,5 @@
 ---
-const { variant= "primary", size = "medium" } = Astro.props; 
+const { variant= "primary", size = "medium", ariaLabel = "" } = Astro.props; 
 
 const buttonStyling = "text-cream-500 bg-brown-500 font-mont font-bold text-[13px] md:text-[23px] xl:text-[40px]"; 
 
@@ -9,4 +9,5 @@ const variantClasses = {
     "secondary": "rounded-full p-2 md:p-3 xl:p-4"
 };
 ---
-<button class:list={[buttonStyling, variantClasses[variant]]}><slot /></button>
+<button     class:list={[buttonStyling, variantClasses[variant]]} 
+aria-label={ariaLabel}><slot /></button>
