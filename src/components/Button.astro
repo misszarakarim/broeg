@@ -1,13 +1,36 @@
 ---
 const { variant= "primary", size = "medium", ariaLabel = "" } = Astro.props; 
 
-const buttonStyling = "text-cream-500 bg-brown-500 font-mont font-bold text-[13px] md:text-[23px] xl:text-[40px]"; 
+const buttonStyling = "text-cream-500 bg-brown-500 font-mont font-bold text-[13px] md:text-[23px] xl:text-[30px]"; 
 
 
 const variantClasses = {
-    "primary": "px-5 py-2 hover:animate-spin",
-    "secondary": "rounded-full p-2 md:p-3 xl:p-4"
+    "primary": "px-5 py-2 hover:custom-pulse hover:bg-brown-600",
+    "secondary": "rounded-full p-2 md:p-3 xl:p-4 hover:custom-pulse hover:bg-brown-600"
 };
 ---
 <button     class:list={[buttonStyling, variantClasses[variant]]} 
 aria-label={ariaLabel}><slot /></button>
+
+<style>
+    /* Define the custom pulse animation */
+    @keyframes customPulse {
+        0% {
+            transform: scale(1);
+           
+        }
+        50% {
+            transform: scale(1.1);
+            
+        }
+        100% {
+            transform: scale(1);
+           
+        }
+    }
+    
+    /* Create the hover effect using the custom pulse animation */
+    .hover\:custom-pulse:hover {
+        animation: customPulse 0.8s ease-in-out infinite; /* Adjust duration for desired speed */
+    }
+    </style>

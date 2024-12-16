@@ -1,5 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from "../components/Button.astro";
 ---
 
 <MainLayout title="Contact us" metaDescription="Contact us about questions and feedback about our BRØG app. We are ready to help you anytime!">
@@ -42,8 +43,8 @@ import MainLayout from "../layouts/MainLayout.astro";
         ></textarea>
 
         <!-- Placeholder for knappen -->
-        <div class="w-full bg-gray-300 text-center py-2 rounded-md">
-          [Button Placeholder]
+        <div class="w-full py-2 rounded-md">
+  <Button variant="primary">Send</Button>
         </div>
       </form>
 
