@@ -40,29 +40,44 @@ const data = await fetch(
 
 </MainLayout>
 
+<style>
+    .active-category {
+        color: #B97F5A; /* Example: Brownish-Orange to show active selection */
+        transition: color 0.1s ease-in-out; /* Smooth transition effect */
+    }
+</style>
+
+
+
 <script client:load>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Select all product elements
-        const products = document.querySelectorAll('.product');
+document.addEventListener("DOMContentLoaded", () => {
+    // Select all product elements
+    const products = document.querySelectorAll('.product');
+    const buttons = document.querySelectorAll('button'); // Select all buttons
 
-        // Function to filter products based on category
-        const filterProducts = (kategori) => {
-            console.log('Filtering category:', kategori); // Debugging
-            products.forEach((product) => {
-                if (kategori === '' || product.dataset.kategori === kategori) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
-            });
-        };
+    // Function to filter products based on category and highlight the button
+    const filterProducts = (kategori, activeButton) => {
+        // Filter products
+        products.forEach((product) => {
+            if (kategori === '' || product.dataset.kategori === kategori) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
+        });
 
-        // Attach event listeners to buttons
-        document.getElementById('btn-mug').addEventListener('click', () => filterProducts('mug'));
-        document.getElementById('btn-tote').addEventListener('click', () => filterProducts('tote'));
-        document.getElementById('btn-thermo').addEventListener('click', () => filterProducts('thermo'));
-        document.getElementById('btn-show-all').addEventListener('click', () => filterProducts(''));
-        
-        console.log("Products initialized:", products); // Debugging
-    });
+        // Remove 'active-category' from all buttons
+        buttons.forEach((button) => button.classList.remove('active-category'));
+
+        // Add 'active-category' to the clicked button
+        activeButton.classList.add('active-category');
+    };
+
+    // Attach event listeners to buttons
+    document.getElementById('btn-mug').addEventListener('click', (e) => filterProducts('mug', e.target));
+    document.getElementById('btn-tote').addEventListener('click', (e) => filterProducts('tote', e.target));
+    document.getElementById('btn-thermo').addEventListener('click', (e) => filterProducts('thermo', e.target));
+    document.getElementById('btn-show-all').addEventListener('click', (e) => filterProducts('', e.target));
+});
+
 </script>
